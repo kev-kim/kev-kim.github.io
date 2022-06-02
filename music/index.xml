@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kevin Kim</title>
-    <link>https://kev-kim.github.io/</link>
+    <link>https://kev-kim.github.io/music/</link>
     <description>Recent content on Kevin Kim</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://kev-kim.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://kev-kim.github.io/music/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
