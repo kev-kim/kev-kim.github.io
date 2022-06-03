@@ -109,6 +109,7 @@ a {
 }
 
 a:hover {
+  color: #7f7f7f;
 }
 
 sup a {
@@ -461,4 +462,25 @@ thead, tfoot, tr:nth-child(even) {
     padding-top: 0;
   }
 
+}
+
+/* Footer Logos */
+
+.inline-block {
+  padding-bottom: 0px;
+}
+
+.instagram:hover {
+  content: url("/icons/instagram_color.svg");
+  width: 32px;
+}
+
+.linkedin:hover {
+  content: url("/icons/linkedin_color.svg");
+  width: 32px;
+}
+
+.github:hover {
+  content: url("/icons/github_color.svg");
+  width: 32px;
 }

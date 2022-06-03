@@ -109,6 +109,7 @@ html {
   }
   
   a:hover {
+    color: #00ff95;
   }
   
   sup a {
@@ -465,5 +466,24 @@ html {
 
 /* Footer Logos */
 .inline-block {
+  padding-bottom: 0px;
   filter: invert(100%) sepia(0%) saturate(2512%) hue-rotate(301deg) brightness(120%) contrast(102%);
+}
+
+.instagram:hover {
+  filter: none !important;
+  content: url("/icons/instagram_color.svg");
+  width: 32px;
+}
+
+.linkedin:hover {
+  filter: none !important;
+  content: url("/icons/linkedin_color.svg");
+  width: 32px;
+}
+
+.github:hover {
+  filter: none !important;
+  content: url("/icons/github_color.svg");
+  width: 32px;
 }
