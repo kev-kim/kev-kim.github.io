@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>About - Kevin Kim</title>
-    <meta property="og:title" content="About - Kevin Kim">
+    <title>Recent Ramblings - Kevin Kim</title>
+    <meta property="og:title" content="Recent Ramblings - Kevin Kim">
     
     <meta name="twitter:card" content="summary">
 
@@ -15,8 +15,8 @@
 
     
       
-      <meta property="description" content="If you ever catch me in a hallway, you would probably hear me discussing Shostakovich&amp;rsquo;s Symphony No. 9, crying about non-convex optimization, or arguing about the moral implications of the &amp;hellip;">
-      <meta property="og:description" content="If you ever catch me in a hallway, you would probably hear me discussing Shostakovich&amp;rsquo;s Symphony No. 9, crying about non-convex optimization, or arguing about the moral implications of the &amp;hellip;">
+      <meta property="description" content="As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by &amp;hellip;">
+      <meta property="og:description" content="As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by &amp;hellip;">
       
     
 
@@ -26,9 +26,10 @@
     
 
     
-    <link href="/about/index.xml" rel="alternate" type="application/rss+xml" title="Kevin Kim" />
     
-    
+
+
+
 
     <link id ="theme" rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
@@ -213,7 +214,7 @@
   
   <li><a href="/">Home</a></li>
   
-  <li class="active"><a href="/about/">About</a></li>
+  <li><a href="/about/">About</a></li>
   
   <li><a href="/projects/">Projects</a></li>
   
@@ -226,7 +227,7 @@
     <article class="main">
       <header class="title">
       
-<h1>About</h1>
+<h1>Recent Ramblings</h1>
 
 <h3>
 </h3>
@@ -236,48 +237,73 @@
       </header>
 
 
-<p>If you ever catch me in a hallway, you would probably hear me discussing <a href="https://en.wikipedia.org/wiki/Symphony_No._9_(Shostakovich)">Shostakovich&rsquo;s Symphony No. 9</a>, crying about <a href="/">non-convex optimization</a>, or arguing about the <a href="https://www.moralmachine.net/">moral implications of the trolley problem</a>. Anyways, heres a little bit about me.</p>
-<h2 id="about-me">About me</h2>
-<p>Who are you?</p>
-<ul>
-<li>I&rsquo;m Kevin, a junior at The Johns Hopkins University. I like playing piano, cooking good food, and going places. My most recent trip was to Washington DC, where I got to watch a <a href="https://www.jacobcollier.com/">Jacob Collier</a> concert.</li>
-</ul>
-<p>Where are you from?</p>
-<ul>
-<li>I&rsquo;m originally from Korea, but I moved to Massachusetts for high school. Now I live in Maryland.</li>
-</ul>
-<p>What skills do you have?</p>
-<ul>
-<li>I&rsquo;m comfortable with most languages, which include C, C++, Java, JavaScript, and Python. I&rsquo;ve also worked with different tech stacks, such as the MERN Stack for web dev, and PyTorch and TensorFlow for machine learning. I&rsquo;m familiar with a lot of tools such as Bash and Git. I&rsquo;ve developed in Mac, Windows, and Linux, although I prefer Linux heavily.</li>
-</ul>
-<p>What do you do in your free time?</p>
-<ul>
-<li>I like to play piano, compose music, or go biking. I generally spend a lot of time with friends or teach myself new skills. Recently I&rsquo;ve been learning to cook new dishes. I always love to explore new flavors, and my friends love my cooking.</li>
-</ul>
-<p>Where does your tagline &ldquo;<em>Imagining Sisyphus happy.</em>&rdquo; come from?</p>
-<ul>
-<li>This is a paraphrase of a quote by one of my favorite authors, <a href="https://en.wikipedia.org/wiki/Albert_Camus">Albert Camus</a>. In his essay <em>The Myth of Sisyphus</em>, he concludes that &ldquo;<em>One must imagine Sisyphus happy</em>&rdquo;. This has resonated with me for all my life, so now I use it as my tagline. If you ever catch me somewhere, then please ask about this!</li>
-</ul>
-<!---
-You can also find a bucket list for my life [here](/about/bucketlist/).
--->
-<h2 id="about-this-site">About this site</h2>
-<p>How did I make this site?</p>
-<ul>
-<li>I used <a href="https://gohugo.io/">Hugo</a>, a static-site builder. The website is hosted as a <a href="https://github.com/kev-kim/kev-kim.github.io/deployments/activity_log">GitHub Page</a>. This makes CI (or whatever you call updating my site) seamless.</li>
-</ul>
-<p>Is it hard to learn?</p>
-<ul>
-<li>Not at all! You can get started very easily. Personally It took me a morning to set this site up, but it may take shorter or longer depending on the features you need.</li>
-</ul>
 
 
 
+<h2 id="9272022">9/27/2022</h2>
+<p>As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by building a model to help me with this daunting task.</p>
+<p>But music is a creative endeavor! It is a sacred art that is meant to express the height of human ingenuity. Fortunately, 16th-century counterpoint has certain restrictions that allow us to figure out the &ldquo;next best&rdquo; note/chord (since 16th century counterpoint is mostly choral music, the next &ldquo;note&rdquo; in the melody is also the next &ldquo;chord&rdquo; since the top note, or melody, can be brought out with chord inversions; basically, harmony implies melody and vice versa).</p>
+<p>But before we begin, let me prelude with a little bit of (16th century) music theory: there are 7 possible chords in any given (major) key, labeled with roman numerals as such : I, ii, iii, IV, V, vi, vii°. These chords, when put into a progression, follow certain rules:</p>
+<ol>
+<li>The piece must start on the I chord.</li>
+<li>The piece must end on the I chord.</li>
+<li>The I chord can be followed by any chord.</li>
+<li>The ii chord can be followed by V or vii°.</li>
+<li>The iii chord can be followed by vi.</li>
+<li>The IV chord can be followed by V or vii°.</li>
+<li>The V chord can be followed by vi or I.</li>
+<li>The vi chord can be followed by ii or IV.</li>
+<li>The vii° chord can be followed by vi or I.</li>
+</ol>
+<p>Why am I spending so much effort describing this? Well, these rules look a lot familiar to something we&rsquo;ve been learning. Let me frame them this way:</p>
+<pre tabindex="0"><code>START -&gt; I
+I -&gt; END
+I -&gt; CHORD
+CHORD -&gt; ii, iii, IV, V, vi, vii°
+ii -&gt; V, vii°
+iii -&gt; vi, IV, ii
+IV -&gt; V, vii°
+V -&gt; I, vi
+vi -&gt; ii, IV
+vii° -&gt; I, vi
+</code></pre><p>As you can see here, this resembles a Context-Free Grammar. Re-written in a true CFG fashion, the rules amount to this:</p>
+<pre tabindex="0"><code>START -&gt; I
+I -&gt; END
+I -&gt; I I
+I -&gt; V I
+V -&gt; IV V
+I -&gt; vi
+V -&gt; vii°
+IV -&gt; ii
+IV -&gt; IV V
+I -&gt; iii vi
+vi -&gt; vi IV
+</code></pre><p>Of course, this CFG is not perfect (if there are any glaring problems, please let me know as I hastily constructed this), and may generate very repetitive phrases, but it illustrates that harmony is essentially a context-free grammar. As I mentioned before, however, there are also inversions of chords. More specifically, each chord has two variations of itself, with the root of the chord being different for each variation. For the sake of simplicity, I won&rsquo;t explicitly outline these in my grammar, but they also follow a set of stylistic rules. Also, just like natural language, it is important to note that these rules always have exceptions, and there are instances where good contrapuntal style is preserved while the chord progression is not &ldquo;correct&rdquo;.</p>
+<p>Now why did I go on this huge tangent? The assignment was to construct a Log-linear model. Well, by framing writing music this way, I have accomplished the reduction from contrapuntal music to natural language. That is, the problem of next best chord can be solved with the solution of next best word - the only difference being the grammar used.</p>
+<p>To formally state my problem:</p>
+<p><strong>Let y represent a chord of interest, and x represent the n chords that precede y.</strong></p>
+<p><strong>I want to find p(y|x) for any series of chords x.</strong></p>
+<p>As to avoid overfitting I will be looking at phrases of 3 chords, so for each chord y, the value for x will be the 2 chords that precede it.</p>
+<p>The basic template to achieve in a log-linear model will be this:</p>
+<p>$$f_{N(u,v,w))}(x,y)=1$$ if y=w and x=u,v; else 0.</p>
+<p>Where N is a function that maps each sequence $$(u,v,w)$$ to a unique integer.</p>
+<p>This way there will be $$7P3=210$$ possible feature vectors only based on $$(u,v,w)$$ and root position chords. With inversions taken into account, there will be $$21P3=7980$$ possible feature vectors. A lot of these features will have negative or 0 weight.</p>
+<p>In the style of anonymous functions, some examples of this will be:</p>
+<p>$$(x,y)\mapsto 1$$ if y=V and X=I,IV; else 0</p>
+<p>$$(x,y)\mapsto 1$$ if y=I and X=ii,V; else 0</p>
+<p>$$(x,y)\mapsto 1$$ if y=iii and X=i,ii; else 0</p>
+<p>The first feature asks whether V is preceded by I,IV.</p>
+<p>The second feature asks whether I is preceded by ii,V.</p>
+<p>The third feature asks whether iii is preceded by i,ii.</p>
+<p>From my exposure to 16th century counterpoint, my best guess will be that the first two features have a positive weight, since the chord progressions I,IV,V and ii,V,I are &ldquo;standard&rdquo; progressions. That is, p(V,|I,IV) and p(I|ii,V) will be high, and it will also lower the probability that other &ldquo;bad&rdquo; chords will follow, such as p(iii,I,IV). This implicitly &ldquo;encodes&rdquo; the grammar of 16th century counterpoint to the model.</p>
+<p>The third feature will most definitely have a negative weight, that is, if the chord progression is i,ii, then it is less likely that the chord that follows is iii, since that is not in the (traditional) grammar of 16th century counterpoint.</p>
+<p>Certain chord progressions are impossible to justify, such as vii°,ii,vi. The weight of such progressions will obviously be $$\approx 0.$$</p>
+<p>One interesting heuristic we can add is the position of the chord in the piece, since most western music is written in measures divisible by 4. This implies that the first chord of some $$4n$$-measure phrase will likely be I, and the last chord will also likely be I. Written in terms of the model, we can have:</p>
+<p>$$(x,y)\mapsto positionalLikelihood(y)$$ if x=ii,V occurs in positions n%4==3 and n%4==0; else 0</p>
+<p>This feature probably has positive weight, since the position of y can be inferred to be the start of a measure, and a measure is likely to start with I.</p>
+<p>With regularization, this model should be able to give me the &ldquo;next best chord&rdquo; and thus generate an entire, interesting piece that may include (but doesn&rsquo;t have to) unconventional harmonic structure. One important thing to note is that like I have mentioned before, this solution is not unique to music - in fact, I have essentially constructed a trigram model with the log-linear model. Thus this model can also be applied to natural language, with the exception of the heuristic functions.</p>
 
 
-<ul>
-  
-</ul>
 
   <footer>
   <center>
@@ -289,6 +315,16 @@ You can also find a bucket list for my life [here](/about/bucketlist/).
   <div>&copy; Kevin Kim 2022.</div>
 </center>
   
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
   
   </footer>
