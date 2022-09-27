@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Log-linear models to generate music - Kevin Kim</title>
-    <meta property="og:title" content="Log-linear models to generate music - Kevin Kim">
+    <title>How I eat eggs - Kevin Kim</title>
+    <meta property="og:title" content="How I eat eggs - Kevin Kim">
     
     <meta name="twitter:card" content="summary">
 
@@ -15,8 +15,10 @@
 
     
       
-      <meta property="description" content="As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by &amp;hellip;">
-      <meta property="og:description" content="As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by &amp;hellip;">
+      <meta property="description" content="Eggs are possibly the best college food: heat a pan, pour some oil, crack an egg. Or even better, boil some water, add some eggs.
+A lot of people are satisfied with just this, but as an avid consumer &amp;hellip;">
+      <meta property="og:description" content="Eggs are possibly the best college food: heat a pan, pour some oil, crack an egg. Or even better, boil some water, add some eggs.
+A lot of people are satisfied with just this, but as an avid consumer &amp;hellip;">
       
     
 
@@ -27,9 +29,6 @@
 
     
     
-
-
-
 
     <link id ="theme" rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
@@ -229,10 +228,10 @@
     <article class="main">
       <header class="title">
       
-<h1>Log-linear models to generate music</h1>
+<h1>How I eat eggs</h1>
 
 <h3>
-  2020-09-26</h3>
+  2020-09-27</h3>
 <hr>
 
 
@@ -242,67 +241,36 @@
 
 
 
-<p>As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by building a model to help me with this daunting task.</p>
-<p>But music is a creative endeavor! It is a sacred art that is meant to express the height of human ingenuity. Fortunately, 16th-century counterpoint has certain restrictions that allow us to figure out the &ldquo;next best&rdquo; note/chord (since 16th century counterpoint is mostly choral music, the next &ldquo;note&rdquo; in the melody is also the next &ldquo;chord&rdquo; since the top note, or melody, can be brought out with chord inversions; basically, harmony implies melody and vice versa).</p>
-<p>But before we begin, let me prelude with a little bit of (16th century) music theory: there are 7 possible chords in any given (major) key, labeled with roman numerals as such : I, ii, iii, IV, V, vi, vii°. These chords, when put into a progression, follow certain rules:</p>
+<h1 id="selfieimageseggjpg"><img src="/images/egg.jpg" alt="selfie"></h1>
+<p>Eggs are possibly the best college food: heat a pan, pour some oil, crack an egg. Or even better, boil some water, add some eggs.</p>
+<p>A lot of people are satisfied with just this, but as an avid consumer of eggs, I <em>needed</em> to find the perfect recipe. After looking into every possible recipe (and I mean that genuinely), I feel that I found the perfect way to cook eggs for myself. This recipe involves very little time, but involves a few uncommon ingredients and a bit of cooking technique.</p>
+<p>After a few friends asked me for the recipe of this dish after trying it, I decided to put it on my website. Why not?</p>
+<p>The recipe itself is a simpler version of <a href="https://www.youtube.com/watch?v=ONYflj0I2QI">Cantonese-style Scrambled Eggs</a>. The main difference is that my recipe uses less ingredients (but still tastes really good!), which makes making these eggs even easier.</p>
+<p><strong>These eggs are a perfect fit to my personal style. They are as soft as a souffle from the shaoxing wine. They have the rich flavor of sesame oil which simultaneously removes the sulfuric aftertaste of the egg. If you don&rsquo;t like your eggs that way, then this recipe isn&rsquo;t for you.</strong></p>
+<p>Here is the recipe:</p>
+<h2 id="kevins-eggs">Kevin&rsquo;s eggs</h2>
+<p>Ingredients:</p>
+<ul>
+<li>4 eggs</li>
+<li>2 tb sp of sesame oil</li>
+<li>2 tb sp of shaoxing wine (this is irreplacable!)</li>
+<li>salt</li>
+<li>white pepper (or black pepper)</li>
+<li>green onion, thinly sliced</li>
+</ul>
+<p>Cooking:</p>
 <ol>
-<li>The piece must start on the I chord.</li>
-<li>The piece must end on the I chord.</li>
-<li>The I chord can be followed by any chord.</li>
-<li>The ii chord can be followed by V or vii°.</li>
-<li>The iii chord can be followed by vi.</li>
-<li>The IV chord can be followed by V or vii°.</li>
-<li>The V chord can be followed by vi or I.</li>
-<li>The vi chord can be followed by ii or IV.</li>
-<li>The vii° chord can be followed by vi or I.</li>
+<li>Crack open and pour the eggs in a bowl with the sesame oil, shaoxing wine, salt, and white pepper.</li>
+<li>Whisk the eggs vigorously. This step is important as it ensures that the egg will be soft when cooked.</li>
+<li>Preheat a pan over the stove. When the pan is very hot, pour the eggs into the pan.</li>
+<li>Wait around 7 seconds, and use a spatula to scrape the egg from the edges towards the center. This step is also very important in ensuring the texture of the egg.</li>
+<li>If done correctly, the rest of the egg mixture will flow to the edges of the pan. Repeat step 4 until egg is almost cooked.</li>
+<li>Add in the sliced green onions on the egg.</li>
+<li>Fold the egg in half and wait for 30 seconds.</li>
+<li>Use the spatula to guide the egg off the pan and serve on a plate with roasted tomatoes.</li>
 </ol>
-<p>Why am I spending so much effort describing this? Well, these rules look a lot familiar to something we&rsquo;ve been learning. Let me frame them this way:</p>
-<pre tabindex="0"><code>START -&gt; I
-I -&gt; END
-I -&gt; CHORD
-CHORD -&gt; ii, iii, IV, V, vi, vii°
-ii -&gt; V, vii°
-iii -&gt; vi, IV, ii
-IV -&gt; V, vii°
-V -&gt; I, vi
-vi -&gt; ii, IV
-vii° -&gt; I, vi
-</code></pre><p>As you can see here, this resembles a Context-Free Grammar. Re-written in a true CFG fashion, the rules amount to this:</p>
-<pre tabindex="0"><code>START -&gt; I
-I -&gt; END
-I -&gt; I I
-I -&gt; V I
-V -&gt; IV V
-I -&gt; vi
-V -&gt; vii°
-IV -&gt; ii
-IV -&gt; IV V
-I -&gt; iii vi
-vi -&gt; vi IV
-</code></pre><p>Of course, this CFG is not perfect (if there are any glaring problems, please let me know as I hastily constructed this), and may generate very repetitive phrases, but it illustrates that harmony is essentially a context-free grammar. As I mentioned before, however, there are also inversions of chords. More specifically, each chord has two variations of itself, with the root of the chord being different for each variation. For the sake of simplicity, I won&rsquo;t explicitly outline these in my grammar, but they also follow a set of stylistic rules. Also, just like natural language, it is important to note that these rules always have exceptions, and there are instances where good contrapuntal style is preserved while the chord progression is not &ldquo;correct&rdquo;.</p>
-<p>Now why did I go on this huge tangent? The assignment was to construct a Log-linear model. Well, by framing writing music this way, I have accomplished the reduction from contrapuntal music to natural language. That is, the problem of next best chord can be solved with the solution of next best word - the only difference being the grammar used.</p>
-<p>To formally state my problem:</p>
-<p><strong>Let y represent a chord of interest, and x represent the n chords that precede y.</strong></p>
-<p><strong>I want to find p(y|x) for any series of chords x.</strong></p>
-<p>As to avoid overfitting I will be looking at phrases of 3 chords, so for each chord y, the value for x will be the 2 chords that precede it.</p>
-<p>The basic template to achieve in a log-linear model will be this:</p>
-<p>$$f_{N(u,v,w))}(x,y)=1$$ if y=w and x=u,v; else 0.</p>
-<p>Where N is a function that maps each sequence $$(u,v,w)$$ to a unique integer.</p>
-<p>This way there will be $$7P3=210$$ possible feature vectors only based on $$(u,v,w)$$ and root position chords. With inversions taken into account, there will be $$21P3=7980$$ possible feature vectors. A lot of these features will have negative or 0 weight.</p>
-<p>In the style of anonymous functions, some examples of this will be:</p>
-<p>$$(x,y)\mapsto 1$$ if y=V and X=I,IV; else 0</p>
-<p>$$(x,y)\mapsto 1$$ if y=I and X=ii,V; else 0</p>
-<p>$$(x,y)\mapsto 1$$ if y=iii and X=i,ii; else 0</p>
-<p>The first feature asks whether V is preceded by I,IV.</p>
-<p>The second feature asks whether I is preceded by ii,V.</p>
-<p>The third feature asks whether iii is preceded by i,ii.</p>
-<p>From my exposure to 16th century counterpoint, my best guess will be that the first two features have a positive weight, since the chord progressions I,IV,V and ii,V,I are &ldquo;standard&rdquo; progressions. That is, p(V,|I,IV) and p(I|ii,V) will be high, and it will also lower the probability that other &ldquo;bad&rdquo; chords will follow, such as p(iii,I,IV). This implicitly &ldquo;encodes&rdquo; the grammar of 16th century counterpoint to the model.</p>
-<p>The third feature will most definitely have a negative weight, that is, if the chord progression is i,ii, then it is less likely that the chord that follows is iii, since that is not in the (traditional) grammar of 16th century counterpoint.</p>
-<p>Certain chord progressions are impossible to justify, such as vii°,ii,vi. The weight of such progressions will obviously be $$\approx 0.$$</p>
-<p>One interesting heuristic we can add is the position of the chord in the piece, since most western music is written in measures divisible by 4. This implies that the first chord of some $$4n$$-measure phrase will likely be I, and the last chord will also likely be I. Written in terms of the model, we can have:</p>
-<p>$$(x,y)\mapsto positionalLikelihood(y)$$ if x=ii,V occurs in positions n%4==3 and n%4==0; else 0</p>
-<p>This feature probably has positive weight, since the position of y can be inferred to be the start of a measure, and a measure is likely to start with I.</p>
-<p>With regularization, this model should be able to give me the &ldquo;next best chord&rdquo; and thus generate an entire, interesting piece that may include (but doesn&rsquo;t have to) unconventional harmonic structure. One important thing to note is that like I have mentioned before, this solution is not unique to music - in fact, I have essentially constructed a trigram model with the log-linear model. Thus this model can also be applied to natural language, with the exception of the heuristic functions.</p>
+<p>(Steps 4-5 can be learned from <a href="https://www.youtube.com/watch?v=ONYflj0I2QI">this video</a>.)</p>
+<p>When done correctly, you should now have an immensely flavorful, soft, and filling egg dish.</p>
 
 
 
@@ -316,16 +284,6 @@ vi -&gt; vi IV
   <div>&copy; Kevin Kim 2022.</div>
 </center>
   
-
-
-
-<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
-
-
-
-<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-
-
 
   
   </footer>
