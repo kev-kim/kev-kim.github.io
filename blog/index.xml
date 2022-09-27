@@ -13,7 +13,7 @@
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://kev-kim.github.io/blog/1/</guid>
-      <description>9/27/2022 As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by building a model to help me with this daunting task.
+      <description>As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by building a model to help me with this daunting task.
 But music is a creative endeavor! It is a sacred art that is meant to express the height of human ingenuity. Fortunately, 16th-century counterpoint has certain restrictions that allow us to figure out the &amp;ldquo;next best&amp;rdquo; note/chord (since 16th century counterpoint is mostly choral music, the next &amp;ldquo;note&amp;rdquo; in the melody is also the next &amp;ldquo;chord&amp;rdquo; since the top note, or melody, can be brought out with chord inversions; basically, harmony implies melody and vice versa).</description>
     </item>
     
