@@ -6,11 +6,11 @@
     <description>Recent content in Recent Ramblings on Kevin Kim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://kev-kim.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kev-kim.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I eat eggs</title>
       <link>https://kev-kim.github.io/blog/2/</link>
-      <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://kev-kim.github.io/blog/2/</guid>
       <description>Eggs are possibly the best college food: heat a pan, pour some oil, crack an egg. Or even better, boil some water, add some eggs.
@@ -20,7 +20,7 @@ A lot of people are satisfied with just this, but as an avid consumer of eggs, I
     <item>
       <title>Log-linear models to generate music</title>
       <link>https://kev-kim.github.io/blog/1/</link>
-      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://kev-kim.github.io/blog/1/</guid>
       <description>As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by building a model to help me with this daunting task.
