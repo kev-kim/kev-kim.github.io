@@ -2,13 +2,11 @@
 <html lang="en-us">
 
 <head>
-	<meta name="generator" content="Hugo 0.100.1" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Kevin Kim</title>
-  <meta property="og:title" content="Kevin Kim">
-  <meta property="og:type" content="website">
+  <title>Common antipatterns and how to fix them - Kevin Kim</title>
+  <meta property="og:title" content="Common antipatterns and how to fix them - Kevin Kim">
   
   <meta name="twitter:card" content="summary">
 
@@ -17,7 +15,10 @@
     
 
     
-    <meta property="description" content="Imagining Sisyphus happy.">
+    
+    <meta property="description" content="The following is a Piazza post I made to my wonderful students in my Gateway Java class. I figured these might help others as well, so on the internet they go. This guide is meant for beginners, or &amp;hellip;">
+    <meta property="og:description" content="The following is a Piazza post I made to my wonderful students in my Gateway Java class. I figured these might help others as well, so on the internet they go. This guide is meant for beginners, or &amp;hellip;">
+    
     
 
     
@@ -26,9 +27,10 @@
     
 
     
-    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Kevin Kim" />
     
-    
+
+
+
 
     <link id="theme" rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
@@ -196,7 +198,7 @@
 </head>
 
 
-<body class="home">
+<body class="">
   <header class="masthead">
     <h1><a href="/">Kevin Kim</a></h1>
 
@@ -212,7 +214,7 @@
   <ul>
   
   
-  <li class="active"><a href="/">Home</a></li>
+  <li><a href="/">Home</a></li>
   
   <li><a href="/about/">About</a></li>
   
@@ -229,40 +231,145 @@
   <article class="main">
     <header class="title">
       
+<h1>Common antipatterns and how to fix them</h1>
+
+<h3>
+  2022-11-29</h3>
+<hr>
+
 
     </header>
 
-<h1 id="selfieimagesselfiejpeg"><img src="/images/selfie.jpeg" alt="selfie"></h1>
-<p>Hi, I&rsquo;m an undergraduate student at <a href="https://www.jhu.edu/">The Johns Hopkins University</a> double-majoring in Computer Science and Cognitive Science with a minor in Music. Currently, I am working with <a href="https://www.redhat.com/en">RedHat</a> on <a href="https://www.patternfly.org/">Patternfly 4</a> as an open source contributor.</p>
-<p>I was a Software Engineer Intern at the <a href="https://www.jhuapl.edu/">Applied Physics Laboratory (APL)</a> over the summer. I&rsquo;m a member of <a href="https://www.cs.jhu.edu/~arya/yarowsky-lab/">LoReLab</a>, where I research low-resource NLP. I&rsquo;m also a lead course assistant (TA) for Gateway Computing: JAVA (EN.500.112). I&rsquo;m working on several projects, but please direct your attention to <a href="https://www.trysplit.it/">Split.it</a>.</p>
-<p>I enjoy music, cooking, and travel.</p>
-<p>Feel free to toggle dark/light mode with the button above. Thanks <a href="https://www.instagram.com/irenezhanggg/">Irene</a> for helping me pick out colors 😊. I built this website with <a href="https://gohugo.io/">Hugo</a>, a really fast and lightweight framework for building static sites based on Go.</p>
-<h2 id="contact-me">Contact me</h2>
-<p>I can be reached at my school email <a href="mailto:kkim170@jhu.edu">kkim170@jhu.edu</a>. I generally try to reply within the day. Feel free to message me on <a href="https://www.linkedin.com/in/kev-kim/">LinkedIn</a> or <a href="https://www.instagram.com/kev.kim_/">Instagram</a> as well. I don&rsquo;t put my number here for privacy reasons.</p>
-<h2 id="recent-posts">Recent posts</h2>
 
 
 
+<p>The following is a Piazza post I made to my wonderful students in my Gateway Java class. I figured these might help others as well, so on the internet they go. <strong>This guide is meant for beginners, or people who are just starting to learn to code.</strong></p>
+<hr>
+<p>As the end of the semester is approaching, I wanted to share some cool tips on writing clean code. These tips don’t apply as much to the scope of this class, but as you guys move on to much more intensive classes (Data structures, intermediate programming, …) some of these practices will help you tremendously.</p>
+<p>I will present these tips in forms of “antipatterns”, or bad habits, and their alternatives.</p>
+<p><strong>Antipattern #1: Redundant boolean expressions</strong></p>
+<p>Let’s say we’re writing validation code to test whether a given username is between 1-10 characters or not. You might be tempted to write the code like this:</p>
+<pre tabindex="0"><code>public static boolean isValidUsername(String username) {
+	if (username.length() &gt;= 1 &amp;&amp; username.length() &lt;= 10) {
+		return true;
+	} else {
+		return false;
+	}
+}
+</code></pre><p>While this is perfectly fine, there is a much cleaner, simpler way to write this piece of code. Notice that:</p>
+<pre tabindex="0"><code>username.length() &gt;= 1 &amp;&amp; username.length() &lt;= 10
+</code></pre><p>is a <em>boolean</em> itself, that is, the entire expression is either true or false. Therefore, the above method can be written like this:</p>
+<pre tabindex="0"><code>public static boolean isValidUsername(String username) {
+	return username.length() &gt;= 1 &amp;&amp; username.length() &lt;= 10;
+}
+</code></pre><p>You might be confused; why is this a thing? The comparison isn’t inside a if statement! Well, let’s give an example. Let’s say the username I entered is “kevin”. In that case, <em>username.length() &gt;= 1</em> gets evaluated to <strong>true</strong>, and <em>username.length() &lt;= 10</em> also gets evaluated to <strong>true</strong>. And to finally evaluate the whole expression, <strong>true</strong> &amp;&amp; <strong>true</strong> is true. Thus the method returns <strong>true</strong>.</p>
+<p>This kind of expression can be generalized: remember that an if statement, in the end, only evaluates a boolean. That is, an if statement will evaluate it’s content if its of the form:</p>
+<pre tabindex="0"><code>if (true) { ... }
+</code></pre><p>Knowing this, you can also avoid the antipattern of writing code like this:</p>
+<pre tabindex="0"><code>if (isValid(username) == true) { ... }
+</code></pre><p>and simply write it like this:</p>
+<pre tabindex="0"><code>if (isValid(username)) { ... }
+</code></pre><p><strong>Antipattern #2: Unnecessarily nesting conditionals (important, especially if you are always getting cyclomatic complexity errors!)</strong></p>
+<p>Let’s say you’re evaluating some complicated conditional statement. For the sake of this example, I will be using letters (A,B,C, and D) to represent boolean expressions.</p>
+<p>You might run into code that is written like this:</p>
+<pre tabindex="0"><code>if (A) {
+  if (B) {
+    if (C) {
+      // stuff 1
+    } else if (D) {
+      // stuff 2
+    }
+  }
+}
+</code></pre><p>Note that this if statement actually has only 2 conditions that are being executed. So, why don’t we write it more like it’s two conditions, like this:</p>
+<pre tabindex="0"><code>if (A &amp;&amp; B &amp;&amp; C) {
+  // stuff 1
+} else if ( A &amp;&amp; B &amp;&amp; D) {
+	// stuff 2
+}
+</code></pre><p>of course, if you really hate redundant code (or want to save computation power!), you can also write it like this:</p>
+<pre tabindex="0"><code>if (A &amp;&amp; B) {
+	if (C) {
+		// stuff 1
+	} else if (D) {
+		// stuff 2
+	}
+}
+</code></pre><p>The point is, cyclomatic complexity can almost always be reduced with general steps like these.</p>
+<p><strong>Antipattern #3:</strong> <strong>Using large if/else or switch blocks when they aren’t necessary</strong></p>
+<p>Let’s say that I’m making a <strong>Fruit</strong> class, but because I want to make sure there are a standard set of fruit, I want to create a <em>mapping</em> between fruits and numbers. More specifically, I want to represent my fruits as integers like this:</p>
+<blockquote>
+<p>0: Apple</p>
+<p>1: Banana</p>
+<p>2: Cherry</p>
+<p>3: Date</p>
+<p>4: Elderberry</p>
+<p>5: Fig</p>
+<p>6: Grape</p>
+</blockquote>
+<p>One simple way to accomplish this is write code like this:</p>
+<pre tabindex="0"><code>public String getFruitName(int fruit) {
+	switch (fruit) {
+		case 0:
+			return &#34;Apple&#34;;
+			break;
+		case 1:
+			return &#34;Banana&#34;;
+			break;
+		case 2:
+			return &#34;Cherry&#34;;
+			break;
+		case 3:
+			return &#34;Date&#34;;
+			break;
+		case 4:
+			return &#34;Elderberry&#34;;
+			break;
+		case 5:
+			return &#34;Fig&#34;;
+			break;
+		case 6:
+			return &#34;Grape&#34;:
+			break;
+	}
+}
+</code></pre><p>But this code is long and unpleasing to read. Also, if I told you that there are not just 6, but thousands, or maybe millions of fruit, how would you handle it with this switch statement? That’s pretty unrealistic. A more elegant way to achieve this is to do something along the lines of this:</p>
+<pre tabindex="0"><code>public String getFruitName(int fruit) {
+	String[] fruits = { &#34;Apple&#34;, &#34;Banana&#34;, &#34;Cherry&#34;, &#34;Date&#34;, &#34;Elderberry&#34;, &#34;Fig&#34;, &#34;Grape&#34; };
+	return fruits[fruit];
+}
+</code></pre><p>Notice how one method is 25 lines, while the other is 4? And the latter is much more readable and maintainable that the former. When we map to an integer, make sure you use the properties of integers to your advantage! In this instance, we use the fact that integers can act as indices to an array, which allows us to quickly get the mapped fruit without needing a huge if/else or switch block. On that note:</p>
+<p><strong>Antipattern #4: Not taking advantage of various data representations</strong></p>
+<p>This is a more general case of the one before, but I’ll give an example that is especially poignant. When you write classes in Java, you will often run into having to write your own versions of the equals and compareTo methods (as we did in Project 5A!). Let’s say I want to write a compareTo method for my <strong>Fruit</strong> class above. Let’s assume that Grape is the best fruit, while Apple is the worst. Since we already have fruits mapped as integers, this should be rather easy. A compareTo method could be written like this:</p>
+<pre tabindex="0"><code>public int compareTo(Fruit otherFruit) {
+	int compare = 0;
+	if (this.fruit &gt; otherFruit.fruit) {
+		compare = 1;
+	} else if (this.fruit &lt; otherFruit.fruit) {
+		compare = -1;
+	}
+	return compare;
+}
+</code></pre><p>While this is okay, there is a slightly way to write this:</p>
+<pre tabindex="0"><code>public int compareTo(Fruit otherFruit) {
+	if (this.fruitVal &gt; otherFruit.fruitVal) {
+		return 1;
+	} else if (this.fruitVal &lt; otherFruit.fruitVal) {
+		return -1;
+	}
+	return 0;
+}
+</code></pre><p>The main difference being that one returns the value (early) and doesn’t store an intermediate “compare” variable, while the other doesn’t.</p>
+<p>But there is an even better way to write this. Note that most compareTo methods only require that a number is either 0, less than 0, or greater than 0. By taking full advantage of this fact, we can actually convert this entire method into a one-liner:</p>
+<pre tabindex="0"><code>public int compareTo(Fruit otherFruit) {
+	return this.fruitVal - otherFruit.fruitVal;
+}
+</code></pre><p>Note how this will return a <em>positive</em> value when <em>this</em> fruit is greater, a <em>negative</em> number if <em>this</em> fruit is smaller, and 0 if they are the same.</p>
+<p><strong>Antipattern #5: Not reusing code</strong></p>
+<p>This one is perhaps the most important one that people often miss. If you find yourself rewriting the same (or similar) code again, then you need to step back and ask yourself; “Can I turn this into a helper method?” That is probably the most important takeaway for you if you have read up to this point.</p>
+<p>Of course there are so many more things that I could mention, but these are the main things that I’ve seen people do. I hope this brief guide helps, but otherwise, thanks so much for reading! Feel free to reach out to me if you have any questions.</p>
 
 
-<ul>
-  
-  <li>
-    <span class="date">2022/11/29</span>
-    <a href="/blog/3/">Common antipatterns and how to fix them</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/09/27</span>
-    <a href="/blog/2/">How I eat eggs</a>
-  </li>
-  
-  <li>
-    <span class="date">2022/09/26</span>
-    <a href="/blog/1/">Log-linear models to generate music</a>
-  </li>
-  
-</ul>
 
   <footer>
   <center>
@@ -274,6 +381,16 @@
   <div>&copy; Kevin Kim 2022.</div>
 </center>
   
+
+
+
+<script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+
+
+
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
   
   </footer>
