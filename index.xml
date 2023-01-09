@@ -5,37 +5,6 @@
     <link>https://kev-kim.github.io/</link>
     <description>Recent content on Kevin Kim</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://kev-kim.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Common antipatterns and how to fix them</title>
-      <link>https://kev-kim.github.io/blog/3/</link>
-      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kev-kim.github.io/blog/3/</guid>
-      <description>The following is a Piazza post I made to my wonderful students in my Gateway Java class. I figured these might help others as well, so on the internet they go. This guide is meant for beginners, or people who are just starting to learn to code.
-As the end of the semester is approaching, I wanted to share some cool tips on writing clean code. These tips don’t apply as much to the scope of this class, but as you guys move on to much more intensive classes (Data structures, intermediate programming, …) some of these practices will help you tremendously.</description>
-    </item>
-    
-    <item>
-      <title>How I eat eggs</title>
-      <link>https://kev-kim.github.io/blog/2/</link>
-      <pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kev-kim.github.io/blog/2/</guid>
-      <description>Eggs are possibly the best college food: heat a pan, pour some oil, crack an egg. Or even better, boil some water, add some eggs.
-A lot of people are satisfied with just this, but as an avid consumer of eggs, I needed to find the perfect recipe. After looking into every possible recipe (and I mean that genuinely), I feel that I found the perfect way to cook eggs for myself.</description>
-    </item>
-    
-    <item>
-      <title>Log-linear models to generate music</title>
-      <link>https://kev-kim.github.io/blog/1/</link>
-      <pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://kev-kim.github.io/blog/1/</guid>
-      <description>As a music minor, I always struggle with writing music - especially music that fits into the form of 16th-century counterpoint. Of course, as a CS student, I think that I can cheat the system by building a model to help me with this daunting task.
-But music is a creative endeavor! It is a sacred art that is meant to express the height of human ingenuity. Fortunately, 16th-century counterpoint has certain restrictions that allow us to figure out the &amp;ldquo;next best&amp;rdquo; note/chord (since 16th century counterpoint is mostly choral music, the next &amp;ldquo;note&amp;rdquo; in the melody is also the next &amp;ldquo;chord&amp;rdquo; since the top note, or melody, can be brought out with chord inversions; basically, harmony implies melody and vice versa).</description>
-    </item>
-    
+    <language>en-us</language><atom:link href="https://kev-kim.github.io/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
